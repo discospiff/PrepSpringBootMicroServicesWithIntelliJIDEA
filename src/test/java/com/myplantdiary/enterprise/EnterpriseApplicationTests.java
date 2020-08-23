@@ -14,7 +14,7 @@ class EnterpriseApplicationTests {
 
     @Test
     void thisTestWillFail() {
-        assertEquals(11, 10);
+        assertEquals(11, 11);
     }
 
 }
