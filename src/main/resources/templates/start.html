@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://wwww.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>My Plant Diary: Register your Plant</title>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript">
+        $(function() {
+            $("#Plant_Name").autocomplete({
+                source: ["Eastern Redbud", "Eastern Red Cedar", "Eastern White Pine"],
+                minLength: 2,
+            });
+        });
+    </script>
+
 </head>
 <body>
 I like Fuji apples.
+<p th:text="${specimen}" />
+<form action="#" method="GET">
+<input type="text" name="plant" id="Plant_Name"/>
+<input type="submit"/>
+</form>
+
 </body>
 </html>

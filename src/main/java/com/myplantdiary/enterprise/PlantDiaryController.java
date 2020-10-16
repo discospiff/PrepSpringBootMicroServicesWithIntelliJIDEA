@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -26,7 +27,13 @@ public class PlantDiaryController {
      * @return
      */
     @RequestMapping("/")
-    public String index() {
+    public String index(Model model) {
+        Specimen specimen = new Specimen();
+        specimen.setDescription("A good pawpaw");
+        specimen.setSpecimenId("1003");
+        specimen.setLongitude("-84.51");
+        specimen.setLatitude("39.74");
+        model.addAttribute("specimenDTO");
         return "start";
     }
 
